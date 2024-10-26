@@ -28,4 +28,21 @@ The data for both Regensburg and Düsseldordf cohorts is available in an anonymi
 
 ### Usage
 
-- [`data`]
+- [`utils`](utils) folder contains utility functions and scripts
+- [`notebooks`](notebooks) folder contains Jupyter notebooks for the analysis
+- [`summary_statistics.ipynb`](notebooks/summary_statistics.ipynb) performs exploratory data analysis
+- [`external_validation.ipynb`](notebooks/external_validation.ipynb) performs external validation of the predictive models
+- [`retraining.ipynb`](notebooks/retraining.ipynb) explores model retraining
+- [`variable_importance.ipynb`](notebooks/variable_importance.ipynb) explores variable importance
+
+### Maintainer 
+
+This repository is maintained by Ričards Marcinkevičs ([richard.martsinkevich@gmail.com](mailto:richard.martsinkevich@gmail.com)).
+
+### Citation
+
+Coming soon...
+
+### Copyright
+
+This repository is additionally licensed under CC-BY-NC-4.0.
