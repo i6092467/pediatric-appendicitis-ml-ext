@@ -94,6 +94,10 @@ def run_preprocessing(data_regensburg, data_dusseldorf):
 	# Düsseldorf cohort
 	app_data_dusseldorf_preproc = deepcopy(data_dusseldorf)
 
+	categorical_val_map_.append(("DiagnosisByCriteria", {'noAppendicitis': 0, 'appendicitis': 1}))
+	categorical_val_map_.append(("TreatmentGroupBinar", {'conservative': 0, 'surgical': 1}))
+	categorical_val_map_.append(("AppendicitisComplications", {'no': 0, 'yes': 1}))
+
 	for column, themap in categorical_val_map_:
 		app_data_dusseldorf_preproc[column] = app_data_dusseldorf_preproc[column].replace(themap)
 		app_data_dusseldorf_preproc[column].replace(-1, np.nan, inplace=True)
@@ -104,11 +108,11 @@ def run_preprocessing(data_regensburg, data_dusseldorf):
 			columns=['DiagnosisByCriteria', 'TreatmentGroupBinar', 'AppendicitisComplications'])),
 		columns=app_data_dusseldorf_preproc.columns[:-3])
 	app_data_dusseldorf_final['DiagnosisByCriteria'] = \
-	pd.factorize(app_data_dusseldorf_preproc['DiagnosisByCriteria'])[0]
+	app_data_dusseldorf_preproc['DiagnosisByCriteria']
 	app_data_dusseldorf_final['TreatmentGroupBinar'] = \
-	pd.factorize(app_data_dusseldorf_preproc['TreatmentGroupBinar'])[0]
+	app_data_dusseldorf_preproc['TreatmentGroupBinar']
 	app_data_dusseldorf_final['AppendicitisComplications'] = \
-	pd.factorize(app_data_dusseldorf_preproc['AppendicitisComplications'])[0]
+	app_data_dusseldorf_preproc['AppendicitisComplications']
 
 	# NOTE: this is somewhat ad hoc
 	mask = app_data_dusseldorf_final['WBCCount'] > 1000
