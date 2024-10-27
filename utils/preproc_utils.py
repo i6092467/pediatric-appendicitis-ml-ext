@@ -92,24 +92,23 @@ def run_preprocessing(data_regensburg, data_dusseldorf):
 
 
 	# Düsseldorf cohort
-	app_data_dusseldorf = deepcopy(data_dusseldorf)
-	app_data_dusseldorf.columns = app_data_dusseldorf.iloc[0]
+	app_data_dusseldorf_preproc = deepcopy(data_dusseldorf)
 
 	for column, themap in categorical_val_map_:
-		app_data_dusseldorf[column] = app_data_dusseldorf[column].replace(themap)
-		app_data_dusseldorf[column].replace(-1, np.nan, inplace=True)
+		app_data_dusseldorf_preproc[column] = app_data_dusseldorf_preproc[column].replace(themap)
+		app_data_dusseldorf_preproc[column].replace(-1, np.nan, inplace=True)
 	
 	# Perform imputation
 	app_data_dusseldorf_final = pd.DataFrame(
-		imputer.transform(app_data_dusseldorf.drop(
+		imputer.transform(app_data_dusseldorf_preproc.drop(
 			columns=['DiagnosisByCriteria', 'TreatmentGroupBinar', 'AppendicitisComplications'])),
-		columns=app_data_dusseldorf.columns[:-3])
+		columns=app_data_dusseldorf_preproc.columns[:-3])
 	app_data_dusseldorf_final['DiagnosisByCriteria'] = \
-	pd.factorize(app_data_dusseldorf['DiagnosisByCriteria'])[0]
+	pd.factorize(app_data_dusseldorf_preproc['DiagnosisByCriteria'])[0]
 	app_data_dusseldorf_final['TreatmentGroupBinar'] = \
-	pd.factorize(app_data_dusseldorf['TreatmentGroupBinar'])[0]
+	pd.factorize(app_data_dusseldorf_preproc['TreatmentGroupBinar'])[0]
 	app_data_dusseldorf_final['AppendicitisComplications'] = \
-	pd.factorize(app_data_dusseldorf['AppendicitisComplications'])[0]
+	pd.factorize(app_data_dusseldorf_preproc['AppendicitisComplications'])[0]
 
 	# NOTE: this is somewhat ad hoc
 	mask = app_data_dusseldorf_final['WBCCount'] > 1000
