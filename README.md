@@ -2,7 +2,7 @@
 
 # External Validation of Predictive Models for Diagnosis, Management and Severity of Pediatric Appendicitis
 
-This repository accompanies the paper "*External Validation of Predictive Models for Diagnosis, Management and Severity of Pediatric Appendicitis*".
+This repository accompanies the paper ["*External Validation of Predictive Models for Diagnosis, Management and Severity of Pediatric Appendicitis*"](https://doi.org/10.1101/2024.10.28.24316300).
 
 **Abstract**
 
