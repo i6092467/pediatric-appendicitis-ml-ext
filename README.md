@@ -43,7 +43,7 @@ This repository is maintained by Ričards Marcinkevičs ([richard.martsinkevich@
 
 To cite the paper, please use
 ```
-@article{MarcinkevisSokol2024,
+@article{MarcinkevicsSokol2024,
   title = {External Validation of Predictive Models for Diagnosis, Management and Severity of Pediatric Appendicitis},
   url = {http://dx.doi.org/10.1101/2024.10.28.24316300},
   DOI = {10.1101/2024.10.28.24316300},
