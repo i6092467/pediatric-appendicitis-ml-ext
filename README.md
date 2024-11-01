@@ -41,7 +41,17 @@ This repository is maintained by Ričards Marcinkevičs ([richard.martsinkevich@
 
 ### Citation
 
-Coming soon...
+To cite the paper, please use
+```
+@article{MarcinkevisSokol2024,
+  title = {External Validation of Predictive Models for Diagnosis, Management and Severity of Pediatric Appendicitis},
+  url = {http://dx.doi.org/10.1101/2024.10.28.24316300},
+  DOI = {10.1101/2024.10.28.24316300},
+  publisher = {Cold Spring Harbor Laboratory},
+  author = {Marcinkevi\v{c}s, Ri\v{c}ards and Sokol, Kacper and Paulraj, Akhil and Hilbert, Melinda A. and Rimili, Vivien and Wellmann, Sven and Knorr, Christian and Reingruber, Bertram and Vogt, Julia E. and Reis Wolfertstetter, Patricia},
+  year = {2024}
+}
+```
 
 ### Copyright
 
